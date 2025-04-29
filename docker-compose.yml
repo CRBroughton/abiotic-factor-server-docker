@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  abiotic-server:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - "./data:/server/AbioticFactor/Saved"
+    environment:
+      - MAXPLAYERS=6
+      - PORT=7777
+      - QUERYPORT=27015
+      - PASSWORD=your_password_here
+      - SERVERNAME=My Custom Abiotic Server
+      - AUTO_UPDATE=true
+    ports:
+      - "7777:7777/udp"
+      - "27015:27015/udp"
