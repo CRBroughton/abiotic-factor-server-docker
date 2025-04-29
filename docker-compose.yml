@@ -1,11 +1,9 @@
-version: '3'
-
 services:
   abiotic-server:
     build: .
     restart: unless-stopped
     volumes:
-      - "./data:/server/AbioticFactor/Saved"
+      - "./data:/server/AbioticFactor"
     environment:
       - MAXPLAYERS=6
       - PORT=7777
